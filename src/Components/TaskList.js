@@ -1,19 +1,12 @@
 import Task from "./Task"
 import { useState } from "react"
 import  "./TaskList.css"
+import { Form, Button, Container, Row, Col} from 'react-bootstrap'
+
 
 const TasksList = () => {
   const [newTask, setNewTask] = useState('')
-  const [tasks, setTasks] = useState([
-    {
-      title: "Estudar React",
-      isCompleted: true 
-    },
-    {
-      title: "Arrumar a casa",
-      isCompleted: false 
-    }
-  ])
+  const [tasks, setTasks] = useState([])
 
    
   const createNewTask = () => {
@@ -34,17 +27,27 @@ const TasksList = () => {
     setTasks(() => ([...actualTasks]))  
   }
   
-  return ( 
-    <div>
-      <div>
-        <input type="text" value={newTask} onChange={(event)=> {setNewTask(event.target.value)}}/>
-         <button onClick={createNewTask}> Create </button>
-      </div>
-    {tasks.map((task, index) => {
-      return <Task key={index} title={task.title} isCompleted={task.isCompleted} updateTask={updateTask} />
-    })}
+  const deleteTask = (index) => {
+    const actualTasks = tasks
+    actualTasks.splice(index,1)
+    setTasks(() => ([...actualTasks]))  
+  }
+ 
 
-  </div>
+  return ( 
+    <Container>
+      <Row>
+        <Col>
+          <Form.Control type="text" placeholder="New Task" value={newTask} onChange={(event)=> {setNewTask(event.target.value)}}/>
+        </Col>
+        <Col>
+          <Button variant="info" type="submit" onClick={createNewTask}> Create </Button>
+        </Col>
+      </Row>
+    {tasks.map((task, index) => {
+      return <Task key={index} title={task.title} isCompleted={task.isCompleted} updateTask={updateTask} deleteTask={deleteTask} index={index}/>
+    })}
+  </Container>
   )
 }
 
