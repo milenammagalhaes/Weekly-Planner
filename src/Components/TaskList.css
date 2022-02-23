@@ -1,0 +1,9 @@
+.createButton{
+  position: center;
+  align-content: center;
+  width: 110px;
+  height: 35px;
+  background: #B2DCDC;
+  border: 1px solid #497272;
+  border-radius: 4px;
+}

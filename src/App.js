@@ -4,8 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
-    <div>
-      <TasksList />
+    <div className="all">
+      <h1> My ToDo List</h1>
+      <TasksList className="tasksBox"/>
     </div>
   )
 }

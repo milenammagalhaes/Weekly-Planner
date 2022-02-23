@@ -10,11 +10,15 @@ const TasksList = () => {
 
    
   const createNewTask = () => {
-    const actualTasks = tasks
-    actualTasks.push({ title: newTask, isCompleted: false })
-    setTasks(() => ([...actualTasks]))    
-    console.log(actualTasks)
-    setNewTask('')
+    if (newTask === "") {
+      window.alert("Add a name for your new task");
+    } else {
+      const actualTasks = tasks
+      actualTasks.push({ title: newTask, isCompleted: false })
+      setTasks(() => ([...actualTasks]))
+      console.log(actualTasks)
+      setNewTask('')
+    }
   }
 
   const updateTask = (title) => {
@@ -41,7 +45,7 @@ const TasksList = () => {
           <Form.Control type="text" placeholder="New Task" value={newTask} onChange={(event)=> {setNewTask(event.target.value)}}/>
         </Col>
         <Col>
-          <Button variant="info" type="submit" onClick={createNewTask}> Create </Button>
+          <button className="createButton" onClick={createNewTask}> Create </button>
         </Col>
       </Row>
     {tasks.map((task, index) => {

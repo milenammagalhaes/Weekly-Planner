@@ -1,0 +1,15 @@
+
+.taskTitle {
+  font-style: italic;
+  text-decoration-line: line-through;
+  color: gray;
+}
+
+.delete{  
+  align-content: center;
+  width: 30px;
+  height: 30px;
+  background: #B2DCDC;
+  border: 1px solid #497272;
+  border-radius: 4px;
+}
