@@ -1,9 +1,29 @@
+.container {
+  align-items: center;
+}
+
+.dayName{
+  text-align: center;
+  font-family: "Helvetica Neue",Helvetica,Arial;
+}
+
+.inputAndButton{
+  display: grid;
+}
+
+.input{
+  padding-right:0;
+  padding-left: 0;
+}
+
 .createButton{
   position: center;
   align-content: center;
-  width: 110px;
+  width: 65px;
   height: 35px;
   background: #B2DCDC;
   border: 1px solid #497272;
   border-radius: 4px;
+  padding-right:2px;
+  padding-left:0;
 }
