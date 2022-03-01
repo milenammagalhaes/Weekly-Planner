@@ -45,7 +45,7 @@ const TasksList = (props) => {
 
     return (
 
-      <Container>
+      <Container  >
         <h4 className="dayName"> {dayName} </h4>
         <InputGroup className="mb-3">
           <Form.Control className="input" type="text" placeholder="New Task" value={newTask} onChange={(event) => { setNewTask(event.target.value) }} onKeyDown={(e) => clickedEnter(e)} />

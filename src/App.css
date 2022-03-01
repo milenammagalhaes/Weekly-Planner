@@ -1,12 +1,24 @@
 .all{
    align-items:center;
+   /* min-height: 100vh; */
+   /* max-height: 100vh; */
+   /* height: 100%; */
 }
 
-h1{
+.title {
   text-align:center;
-}
+  padding: 20px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 60px;
+ }
 
 .daysWeek {
-  display: flex;
-  border-right: 2px solid grey;
+  background-color: rgba(255, 255, 255, 0.822); 
+  border: solid gray 1px;
+  height: 75vh;
+  padding: 20px 0px;  
+}
+
+.tesr {
+  padding:0
 }
